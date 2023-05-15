@@ -69,34 +69,43 @@ function solution(progresses, speeds) {
 위 코드는 전체적인 로직 자체는 나의 코드와 비슷하나, forEach대신 map을 사용하여 시간복잡도를 작게 만들어 나의 코드보다 더 빠르게 처리할수 있다.
 
 - 알게된점
+
   - forEach vs Map
+
     > forEach() — executes a provided function once for each array element
     >
     > => 배열요소마다 한 번씩 제공한 함수를 실행합니다.
+
     > map() — creates a new array with the results of calling a provided function on every element in the calling array.
     >
     > => 배열 내의 모든 요소 각각에 대하여 제공된 함수를 호출하고, 그 결과를 모아서 새로운 배열을 반환합니다.
+
     위 MDN의 정의로 볼때 제일 중요한 차이점은 map은 동일한 사이즈의 새로운 배열을 반환한다는 것이다.
-    사용 예시 :
-    ```tsx
-    //forEach 사용 예시
-    arr.forEach((num, index) => {
-      return (arr[index] = num * 2);
-    });
 
-    // arr = [2, 4, 6, 8, 10]
+  사용 예시 :
 
-    //map 사용 예시
-    let doubled = arr.map((num) => {
-      return num * 2;
-    });
+  ```tsx
+  //forEach 사용 예시
+  arr.forEach((num, index) => {
+    return (arr[index] = num * 2);
+  });
 
-    // doubled = [2, 4, 6, 8, 10]
-    ```
-    또, 다른 차이점으로는 map함수가 대부분의 상황에서 forEach문보다 빠르다는 차이점도 존재한다.
-    즉, 둘의 차이점은 다음 표로 정리할수있다.
-    | 차이점 \ 함수 | forEach       | map           |
-    | ------------- | ------------- | ------------- |
-    | 속도          | 느리다        | 빠르다        |
-    | 반환          | 입력된 배열로 | 새로운 배열로 |
-    결론적으로는 왠만해서는 forEach대신 map을 사용하는것이 효율적이다.
+  // arr = [2, 4, 6, 8, 10]
+
+  //map 사용 예시
+  let doubled = arr.map((num) => {
+    return num * 2;
+  });
+
+  // doubled = [2, 4, 6, 8, 10]
+  ```
+
+  또, 다른 차이점으로는 map함수가 대부분의 상황에서 forEach문보다 빠르다는 차이점도 존재한다.
+
+  즉, 둘의 차이점은 다음 표로 정리할수있다.
+  | 차이점 \ 함수 | forEach | map |
+  | ------------- | ------------- | ------------- |
+  | 속도 | 느리다 | 빠르다 |
+  | 반환 | 입력된 배열로 | 새로운 배열로 |
+
+  결론적으로는 왠만해서는 forEach대신 map을 사용하는것이 효율적이다.
