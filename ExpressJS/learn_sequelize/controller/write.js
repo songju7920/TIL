@@ -2,7 +2,7 @@
 const { write } = require("../models");
 
 //비동기화 모듈 생성
-module.exports = createWriting = async (req, res) => {
+const createWriting = async (req, res) => {
   //서버의 create와 update요청에서 writeID, writeHead, writeBody, writeUser를 추출해 가져오기
   const { writeID, writeHead, writeBody, writeUser } = req.body;
 
@@ -39,3 +39,5 @@ module.exports = createWriting = async (req, res) => {
     });
   }
 };
+
+module.exports = createWriting;
