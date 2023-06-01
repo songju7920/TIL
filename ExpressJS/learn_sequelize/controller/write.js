@@ -56,7 +56,7 @@ const readWriting = async (req, res) => {
     //만약 writeID가 존재하지 않을경우 404상태코드와 실패 메세지를 담은 JSON 응답 전송
     if (!writed)
       return res.status(404).json({
-        massage: "존재하지 않는 계시물을 읽을수 없습니다.",
+        massage: "존재하지 않는 게시물을 읽을 수 없습니다.",
       });
 
     //상태코드 200과 성공 메세지, writed를 담은 JSON 응답 전송
