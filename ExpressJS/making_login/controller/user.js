@@ -14,14 +14,14 @@ const createUser = async (req, res) => {
     });
 
     if (thisUser)
-      return res.stats(409).json({
+      return res.status(409).json({
         massage: "이미 회원으로 등록된 이메일입니다.",
         thisUser,
       });
 
     const salt = crypto.randomBytes(32).toString("hex");
     const hashPassword = crypto
-      .pdkdf2Sync(userPW, salt, 2, 32, "sha512")
+      .pbkdf2Sync(userPW, salt, 2, 32, "sha512")
       .toString("hex");
 
     await user.create({

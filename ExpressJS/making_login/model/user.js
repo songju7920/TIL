@@ -9,19 +9,19 @@ module.exports = (sequelize, DataType) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      UserPW: {
-        type: DataType.STRING(11),
-        allowNull: false,
-      },
-      UserName: {
+      userPW: {
         type: DataType.STRING(),
         allowNull: false,
-      },
-      UserEmail: {
+    },
+    userName: {
+        type: DataType.STRING(),
+        allowNull: false,
+    },
+    userEmail: {
         type: DataType.STRING(30),
         allowNull: false,
-      },
-      accessToken: {
+        unique: true,
+    },cessToken: {
         type: DataType.STRING(),
         allowNull: true,
       },

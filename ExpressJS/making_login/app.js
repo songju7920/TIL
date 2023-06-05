@@ -4,7 +4,6 @@ const app = express();
 const cors = require("cors");
 const { sequelize } = require("./model/index");
 const router = require("./router/index");
-
 require("dotenv").config();
 
 const corsOptions = {
@@ -16,7 +15,7 @@ const corsOptions = {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.json);
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(cors(corsOptions));
