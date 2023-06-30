@@ -6,4 +6,5 @@
   - Blazegraph
   - OrientDB
 - 구조 예시
+
   ![Untitled](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/GraphDatabase_PropertyGraph.png/462px-GraphDatabase_PropertyGraph.png)
