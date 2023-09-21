@@ -5,8 +5,8 @@ import React from "react";
   반복되는 UI를 제작할때 효율적이다 (메뉴바, 로고 등)
 */
 
-function Hello() {
-  return <h1>Hello React!</h1>;
+function Hello(props) {
+  return <h1>Hello {props.title}</h1>;
 }
 
 export default Hello;

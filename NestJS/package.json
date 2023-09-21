@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@liaoliaots/nestjs-redis": "^9.0.5"
+  }
+}
