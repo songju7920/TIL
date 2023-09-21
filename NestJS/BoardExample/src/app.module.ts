@@ -3,6 +3,7 @@ import { PostModule } from './post/post.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { config } from 'dotenv';
+import { UserModule } from './user/user.module';
 
 config();
 
@@ -26,6 +27,7 @@ config();
       inject: [ConfigService],
     }),
     PostModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],

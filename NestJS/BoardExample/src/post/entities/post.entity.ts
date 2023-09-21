@@ -1,9 +1,8 @@
-/* eslint-disable prettier/prettier */
 import {
-  Column,
-  CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
 } from 'typeorm';
 
 @Entity()

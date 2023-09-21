@@ -1,10 +1,9 @@
 import { IsString } from 'class-validator';
 
-
-export class updatePostDto {
+export class logInDto {
   @IsString()
-  title: string;
+  userName: string;
 
   @IsString()
-  content: string;
+  password: string;
 }
