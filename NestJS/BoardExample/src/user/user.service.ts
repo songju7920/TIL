@@ -10,13 +10,13 @@ import { createUserDto } from './dto/createUser.dto';
 import { logInDto } from './dto/logIn.dto';
 import { JwtService } from '@nestjs/jwt';
 import { userPayloadDto } from './dto/userPayload.dto';
-import { InjectRedis } from '@liaoliaots/nestjs-redis'
+import { InjectRedis } from '@liaoliaots/nestjs-redis';
 import { Redis } from 'ioredis';
 
 @Injectable()
 export class UserService {
   constructor(
-    @InjectRedis() private readonly redis: Redis
+    @InjectRedis() private readonly redis: Redis,
     @InjectRepository(User) private userEntity: Repository<User>,
     private jwt: JwtService,
   ) {}
@@ -45,16 +45,15 @@ export class UserService {
 
     const user = await this.userEntity.findOneBy({ userName });
 
-    if (!user)
-      throw new NotFoundException(`could not find user ${userName}`);
+    if (!user) throw new NotFoundException(`could not find user ${userName}`);
 
     if (user.password != password)
       throw new ConflictException(`password isn't correct`);
 
     const payload = { userID: user.userID, userName: userName };
 
-    const accessToken = this.generateAccess(payload);
-    const refreshToken = this.generateRefresh(payload);
+    const accessToken = await this.generateAccess(payload);
+    const refreshToken = await this.generateRefresh(payload);
 
     await this.redis.set(`${user.userID}AccessToken`, accessToken);
     await this.redis.set(`${user.userID}RefreshToken`, refreshToken);
