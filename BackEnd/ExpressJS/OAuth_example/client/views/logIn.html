@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log_In</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #brContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      hr {
+        margin: 0px 10px;
+        width: 50px;
+      }
+      input {
+        margin: 5px 0px;
+        border-radius: 10px;
+        width: 250px;
+        height: 30px;
+      }
+      input:last-child {
+        width: 255px;
+      }
+      #logInContainer {
+        margin: 10px 0px 25px;
+      }
+      #githubContainer {
+        display: flex;
+        align-items: center;
+      }
+      .github_logo {
+        width: 30px;
+        margin-right: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Welcome To Example.com!</h2>
+    <form id="logInContainer" action="">
+      <input type="text" /><br />
+      <input type="password" /><br />
+      <input type="button" value="로그인" />
+    </form>
+    <div id="brContainer">
+      <hr />
+      <span>또는</span>
+      <hr />
+    </div>
+    <div id="githubContainer">
+      <img src="./img/Github_logo.png" class="github_logo" />
+      <a href="/OAuth/github/login">Github로 로그인</a>
+    </div>
+  </body>
+</html>
